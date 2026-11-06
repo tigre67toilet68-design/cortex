@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CORTEX">
+<meta name="theme-color" content="#000000">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAGiUlEQVR42u3dy2sTXRzG8SS1qamlVWsJaqON2gitwYW0RkURbbOIl0UD7k3rShDc6kZB60JcuFTwH7AUkUBdGCui4gUvZAQX1dTEJtqFjdQ2iZWaeReCeKm+MzFNz5nz/axPkjPnPPnNfcZmAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5WMXv4u6rltz6O12wkEgZA2KnVgQEQnCoXIsxIyIg2RQO8WtHMRC2BLiIBmUEBHDQTIEHyIHySAfYoWDZEgxXA6GHgKFg7Ihy6A5SAb5YLUCscNB2ZBrAKkcECAclA3phpHKAcIBwgH5wsEGh4yDSeUA4QDhAOFAJSxiCJLJ5NOnTzVNS6VSY2Nj6XR6amoqn88XCoWvX7/W1NS4XK6mpia32+31ejdu3Lhp06atW7c2NTVZfmQqdAmraHsrHz9+vHHjRjQavXnz5sTERAnf0NraGgwGQ6FQV1eX0+ms9LTZ7dbJoC6MW7duhcPhRYvKVjKXLVvW19f3+PHjSi6F1XbNF9z169fb29vnbxk7OzsHBweLxSLhkCkcz58/37FjR2WWNBAIEA45wjE7O9vf319dXV2xJW1sbLRMOKy8t5LNZnt6eu7cucMeGeH4SSKRCIVCIyMjzDHh+Mnr16937tw5Pj7OBP8LCx4hzWQyXV1dJINw/KpQKIRCoVQqxdSyWvnVsWPHNE0r+eNtbW3d3d3btm1rbW31eDx1dXVOp/Pz58+5XG58fDydTr98+TIej9+7dy+ZTJIemXZlBwYGSuue0+mMRCLxeNz4byUSifPnz2/ZssXCu7LWCcf09HRzc3MJfduzZ8/IyEjJv/vs2bPDhw9/P71COEQMx8mTJ832ym63nzp1qiwHvJPJZG9vb1VVFeEQLhzZbHbJkiVmk3Hp0qXydiMej4fDYcIhVjj6+/vNduns2bO6tAiHiRMoq1evNtWf/fv36zIjHEYNDw+b6kx9fX06nSYcShwEGxwcNNX++PHjZiuNmqxwmeCaNWvGxsYMNq6trc1kMkuXLpV72ipymaD0lePt27fGk2Gz2cLhsOzJqBjpw/Ho0SNT7Q8dOsSsqxKOJ0+eGG9cXV29e/duZl2VcCQSCeON/X5/XV0ds65KOEydnd+8eTNTrtYGqfHGXq+XKVcoHJOTk8Ybr1q1iilXJRzFYnFmZsZ4+4aGBqZclXAUCgVT7RcvXsyUK7RaMcVS9x8Tjr9zuVzzWmkIh8y9dzhqamqMt//06RNTrtBqxdQ25rt375hyhcLh8XiMN37z5g1TrlA4WlpajDeOx+NMuULhWLdunfHGL168yOVyzLoq4fj9tqK/+PLly+3bt5l1VcIRCARMtb969SqzbpAVLhP0eDzpdNpgYy4TVKhy2Gy2gwcPGm+cz+cvXrxIVRDIfD890lRn6uvrM5kMtyYoEY7Z2Vmz5+IPHDhAOJRYrVRVVR09etTUR6LR6Llz56jo1q8cuq5PTEzU1taa3aa7fPlyebuhaRo3UgsXDl3XT5w4UcI2/+nTp8vyCIZUKnXkyBEewSBoOKanp0u7yXHv3r2vXr36l4e3RCIRHt4idDh0XS/5AJfT6ezt7dU0zfhvjY6OXrhwoaOj45evslI4rPZKjb6+vitXrpT88fb29u7u7kAg4PP5vj8wbmZmJpfLvX///tsD4zRNu3v37p9O8DY2Nn748MEaB8EsVTl0Xc/n836/fwGX1EqVw2rXkLpcrqGhobVr17KHSDjm0NzcHIvF3G43s0s45rBhw4b79+/7fD4mmHDMYf369Q8ePNi1axdzTDjmsHz58uHh4TNnzlTyZTwQd2/lT6/x2r59e2WWlNd4SRaOb65du9bW1jZ/y9jR0TEwMMALAKUMh67rxWIxFov19PSU8dWhDQ0NkUjk4cOH1jtlr+hLh7PZ7NDQUDQajcVi2Wy2hG/wer3BYHDfvn3BYNDUXXflmbaKHCFVNBw/Gh0d/f115YVC4cfXla9YscLtdre0tPh8Pr/f39nZuXLlygXsM+HAAofDwUCDcIBwgHCAcIBwQOVw8KQ2GQeTygHCAcIBKcPBZod0w0jlgBjhoHjINYBUDggTDoqHREPnUGEhSQarFVgiHBQPKYbLodoCkww5VivkQ/Ahcqi88CTjfzogyEBwebqA/xkHw0EyRK8clBAB/yGC/l9Vi4iYhVOCYm7VoLAmBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABALf8BzfPCkBb83rIAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACA0lEQVR42u2Zu6rCMBiAtYhF8bLpoLuLiLh6HSsU3PQFHNRn0SeodBAHwcXVzaGvIIl4mQVBxQ7eyRmEQ0/PQdpac1L8vy3Q5P8/k/5JqssFAAAAAADwubitdSOE2J+K201D4B2pv6LBMZW9hRAcU9lbCMSxlr3ZcJzL4XAM/vymgn7GDLCM5x2Dzmaz0WikKApCaLvdqqoaCATi8XgmkxEEQRTFYDBIezkaBCEkiuLzzSgcDnc6HSOj0Rbo9Xp+v9/IgNlsljmBwWBg/BTAnMBiseB5XtcrmUx2u93lcnk8Hg+HA0JIkqRCocCiQK1W03Wp1+vX6/XPhxVFaTabDAns93uP50c1y+Vyt9uNvAwlgeFwqHt+PB4TO6C0kWGMtU2e50ulkpN24s1mo21Go1Gv1+skAd1cW7sZ/qdAJBLRNtfr9eVycZJAIpHQNs/n82QyYevE97xW7HY7XRnN5/P3+90xZZQQUq1WdV0ajcaTjazVarElMJ/Pf1eeVColy/JqtTqdTqqqYowlSSoWi4we5vr9voMPcw9kWfb5fA4WIIRMp1NBEJ5PRSgUarfbdgm4DQqYEkYIPa6UGOPvK2UsFkun0+VyuVKpGLxSGlmTbxGg+Z0UPquAAAjY9DL9yxv8SUuI8iQYD8e9Y1Bq2ZteQhQczIZw/N+sAAAAAAAAn8wXszrdK9tH7LkAAAAASUVORK5CYII=">
+<title>CORTEX — Assistant IA</title>
+<style>
+:root{--b:#2a2a2a;--m:#9a9a9a}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:#000;color:#fff;font:15px/1.6 -apple-system,"Helvetica Neue",Inter,"Segoe UI",sans-serif;display:flex;overflow:hidden;position:fixed;inset:0;width:100%;-webkit-font-smoothing:antialiased}
+aside{width:280px;background:#000;border-right:1px solid var(--b);padding:22px 18px;display:flex;flex-direction:column;gap:18px;overflow:auto;transition:transform .25s}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.26em;font-size:13px}
+.logo i{width:26px;height:26px;background:#fff;border-radius:6px;display:grid;place-items:center}
+.logo i::after{content:"C";color:#000;font:700 14px sans-serif}
+.card{border:1px solid var(--b);border-radius:8px;padding:12px 14px}
+.card h4{font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.18em;color:var(--m);text-transform:uppercase;margin-bottom:10px}
+.st{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;color:#cfcfcf}.st b{color:#fff;font-variant-numeric:tabular-nums}
+#facts{font-size:12.5px;color:var(--m);max-height:170px;overflow:auto}#facts div{padding:5px 0;border-bottom:1px solid #1c1c1c}#facts b{color:#fff;font-weight:500}#journalList div{padding:10px 0;border-bottom:1px solid #222}#journalList b{color:#fff;display:block;margin-bottom:4px}#journalList span{color:#999;font-size:12px}
+button{font:inherit;cursor:pointer}
+.ghost{background:none;border:1px solid var(--b);color:#cfcfcf;border-radius:8px;padding:9px 10px;width:100%;font-size:13px}
+.ghost:hover{background:#fff;color:#000}
+main{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+header{display:flex;align-items:center;gap:12px;padding:15px 24px;border-bottom:1px solid var(--b)}
+header h1{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.dot{width:7px;height:7px;border-radius:50%;background:#fff}
+#menu{display:none;background:none;border:1px solid var(--b);color:#fff;border-radius:6px;padding:4px 10px}
+#chat{flex:1;overflow:auto;padding:28px 24px;display:flex;flex-direction:column;gap:26px;scroll-behavior:smooth}
+.m{display:flex;gap:14px;max-width:780px;width:100%;margin:0 auto}
+.av{flex:none;width:30px;height:30px;border-radius:6px;display:grid;place-items:center;font:600 10.5px ui-monospace,Menlo,monospace;border:1px solid var(--b);color:#fff}
+.m.c .av{background:#fff;color:#000;border-color:#fff}
+.bd{border:1px solid var(--b);background:#0a0a0a;border-radius:10px;padding:13px 16px;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.m.u .bd{background:#fff;color:#000;border-color:#fff}
+.bd h3{font-size:15px;font-weight:600;margin-bottom:4px}
+.bd a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.tag{display:inline-block;font:500 10px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#bbb;border:1px solid #444;border-radius:4px;padding:1px 8px;margin-bottom:9px}
+.src{margin-top:12px;padding-top:10px;border-top:1px solid var(--b);font-size:13px;color:var(--m)}.src a{display:block;padding:2px 0}
+.typing span{display:inline-block;width:6px;height:6px;margin-right:5px;border-radius:50%;background:#666;animation:b 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes b{50%{transform:translateY(-4px);background:#fff}}
+footer{padding:12px 24px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--b)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;max-width:780px;margin:0 auto}
+.chips button{flex:none;background:none;border:1px solid var(--b);color:#bbb;border-radius:6px;padding:5px 12px;font-size:12.5px}
+.chips button:hover{background:#fff;color:#000}
+form{display:flex;gap:10px;max-width:780px;margin:0 auto}
+input{flex:1;min-width:0;background:#0a0a0a;border:1px solid #333;color:#fff;border-radius:10px;padding:12px 14px;font:inherit;outline:none}
+input:focus{border-color:#fff}input::placeholder{color:#6d6d6d}
+form button{background:#fff;border:0;color:#000;border-radius:10px;padding:0 20px;font-weight:600}
+form button:hover{background:#ddd}
+form button.alt{background:none;border:1px solid #333;color:#fff;padding:0 14px}form button.alt.on{background:#fff;color:#000;border-color:#fff}
+#live{margin-left:auto;font:500 10px ui-monospace,Menlo,monospace;letter-spacing:.06em;color:var(--m);white-space:nowrap}
+.dot.on{animation:p 1.2s infinite}@keyframes p{50%{opacity:.25}}
+@media(max-width:800px){aside{position:fixed;inset:0 auto 0 0;z-index:5;transform:translateX(-100%);padding-top:calc(18px + env(safe-area-inset-top,0px))}aside.open{transform:none}#menu{display:block}header{padding-top:calc(14px + env(safe-area-inset-top,0px))}header,#chat,footer{padding-right:46px}.lg{display:none}}
+</style></head>
+<body>
+<aside id="side">
+  <div class="logo"><i></i>CORTEX</div>
+  <div class="card"><h4>Cerveau</h4>
+    <div class="st"><span>Mots du lexique</span><b id="sLex">0</b></div>
+    <div class="st"><span>Phrases de base</span><b id="sKB">0</b></div>
+    <div class="st"><span>Articles appris</span><b id="sSav">0</b></div>
+    <div class="st"><span>Phrases que tu m’as apprises</span><b id="sFacts">0</b></div>
+    <div class="st"><span>Requêtes traitées</span><b id="sQ">0</b></div>
+    <div class="st"><span>Vitesse d’apprentissage</span><b id="sRate">0 /min</b></div>
+    <div class="st"><span>Mots appris seuls</span><b id="sWords">0</b></div>
+    <div class="st"><span>Réseau</span><b id="sNet">…</b></div>
+  </div>
+  <div class="card" id="clCard" style="display:none"><h4>Apprendre avec Claude</h4>
+    <div id="clStat" style="font-size:12.5px;color:var(--m);margin-bottom:8px">…</div>
+    <input id="clTopic" style="width:100%" placeholder="Sujet (vide = tes sujets ou au hasard)">
+    <button class="ghost" id="clGo" style="margin-top:8px">Apprendre un lot (25 articles)</button>
+    <button class="ghost" id="clGo5" style="margin-top:8px">Apprendre 5 lots d’affilée</button>
+    <button class="ghost" id="clUseBtn" style="margin-top:8px">…</button>
+    <div style="font-size:11.5px;color:var(--m);margin-top:8px">Chaque lot utilise ton quota Claude. Tout est sauvegardé sur le site.</div>
+  </div>
+  <div class="card"><h4>Mémoire apprise</h4><div id="facts"></div></div>
+  <div class="card"><h4>Commandes</h4><div style="font-size:12.5px;color:var(--m)">
+    • une question → recherche web<br>• définition de <i>mot</i><br>• 12*(3+4)<br>• retiens : question = réponse<br>• quelle heure est-il</div></div>
+  <div class="card"><h4>Sauvegarde</h4>
+    <div class="st"><span>Base interne</span><b id="vIdb">…</b></div>
+    <div class="st"><span>Copie rapide</span><b id="vLs">…</b></div>
+    <div class="st"><span>Stockage protégé</span><b id="vPers">?</b></div>
+    <div class="st"><span>Dernière synchro</span><b id="vLast">—</b></div>
+    <div class="st"><span id="vSrvL">Disque (cortex.py)</span><b id="vSrv">absent</b></div>
+    <div class="st" style="margin-bottom:8px"><span>Fichier de secours</span><b id="vFile">jamais</b></div>
+    <button class="ghost" id="btnExport" style="margin-bottom:8px">Exporter le cerveau (.json)</button>
+    <button class="ghost" id="btnExportHtml" style="margin-bottom:8px">CORTEX avec cerveau intégré (.html)</button>
+    <button class="ghost" id="btnImport">Importer un cerveau</button>
+    <input type="file" id="fileImp" accept=".json,.html,application/json,text/html" hidden>
+  </div>
+  <div class="card"><h4>Réglages</h4>
+    <button class="ghost" id="btnJournal" style="margin-bottom:8px">Voir les articles appris</button>
+    <button class="ghost" id="btnSave" style="margin-bottom:8px">Forcer la sauvegarde</button>
+    <button class="ghost" id="btnWL" style="margin-bottom:8px">…</button>
+    <button class="ghost" id="reset">Effacer toute la mémoire</button>
+  </div>
+</aside>
+<!-- Journal modal -->
+<div id="journal" style="display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.92);padding:20px 16px;overflow:auto;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+    <h2 style="font-size:14px;letter-spacing:.15em;text-transform:uppercase">Journal d’apprentissage</h2>
+    <button id="closeJournal" style="background:#fff;color:#000;border:0;border-radius:8px;padding:8px 14px;font-weight:600">Fermer</button>
+  </div>
+  <p style="font-size:12px;color:#999;margin-bottom:14px">Articles liés à TES questions. Appris en silence, jamais dans le chat. Sauvegardés automatiquement.</p>
+  <div id="journalList" style="font-size:13px;line-height:1.5"></div>
+</div>
+
+<main>
+  <header><button id="menu">☰</button><span class="dot"></span><h1>CORTEX · Assistant IA</h1><small id="live"></small></header>
+  <div id="chat"></div>
+  <footer>
+    <div class="chips" id="chips"></div>
+    <form id="f"><input id="q" autocomplete="off" placeholder="Posez votre question…"><button type="button" id="mic" class="alt">Voix</button><button>Envoyer</button></form>
+  </footer>
+</main>
+<script id="cxseed" type="application/json">{}</script>
+<script>
+// ===== LEXIQUE (liste de mots du cerveau) =====
+const LEX=("abeille abri accord acteur action adresse aeroport agence agir aide aimer air algorithme alphabet amour ancien animal annee antenne appareil apprendre arbre argent armee art artiste atelier atome attention auteur avenir avion banque base bateau beaute besoin bibliotheque bleu bonheur bouche bureau cable cafe calcul camera capital carte cause centre cerveau chaleur chambre chance changer chanson chapitre chateau chemin cheval chiffre ciel cinema cle code coeur colonne commerce communication compte confiance connaitre conseil continent couleur courage cours creer crise culture danger data debut defense demain dessin developpement dictionnaire difference dimension direction discours distance docteur document donnee dossier droit eau ecole ecran ecrire education electricite elephant email energie enfant ennemi entreprise environnement epoque equipe erreur espace esprit etoile etude europe exemple experience explication fabrication famille femme fenetre feu fichier film finance fleur fleuve force foret formation forme fort frere frontiere fruit futur galaxie garcon gaz gouvernement grammaire groupe guerre guide histoire homme horloge hotel idee image imagination information ingenieur instrument intelligence internet invention ile jardin jeu jeune joie journal jour justice langage langue lecture legende lettre liberte lien ligne liste livre logiciel loi lumiere lune machine magie main maison marche mathematique matiere medecin memoire message metier meteo minute mission mode moment monde montagne mot moteur musique nature navigateur neurone niveau nombre nord nuage nuit numerique objectif ocean ordinateur ordre organisation origine ouvrir page paix papier paragraphe parole partie passage passe pays peinture pensee personne phrase physique piece planete plante poeme pomme pont population porte pouvoir prediction presse probleme programme projet protection public question raison reseau recherche reponse reve riviere robot roche route science securite sens serveur signal sillage societe soleil son sophie sortie source sport strategie structure sujet systeme table technologie telephone temps terre texte theme theorie tigre travail universite univers vague valeur vent verite ville vision vitesse voiture voix volume voyage web zone").split(" ");
+const STOP=new Set("le la les un une des de du d l et ou a au aux en dans sur pour par avec sans que qui quoi est sont c ce cet cette ces il elle on nous vous ils elles je tu me te se mon ma mes ton ta tes son sa ses ne pas plus tres comment pourquoi quel quelle quels quelles ou quand combien peux peut dis moi sais tu cherche recherche explique definition definis signification".split(" "));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/['’-]/g," ").replace(/[?!.,;]/g," ").replace(/\s+/g," ").trim();
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+let facts={},stats={q:0},last="";
+try{facts=JSON.parse(localStorage.cx_facts||"{}");stats=JSON.parse(localStorage.cx_stats||'{"q":0}')}catch(e){}
+const save=()=>{try{vault.touch(1);brainSoon()}catch(e){}};
+function side(){$("#sLex").textContent=LEX.length;$("#sKB").textContent=IDX.length;$("#sSav").textContent=SAV.length;$("#sFacts").textContent=LRN.length;$("#sQ").textContent=stats.q;try{$("#sRate").textContent=rate()+" /min";$("#sWords").textContent=LEXADD.length;$("#sNet").textContent=HOSTED?"site hébergé":NET==="ok"?(SRV?"serveur ✓":"en ligne"):NET==="bloqué"?"bloqué":"…"}catch(e){}
+  $("#facts").innerHTML=LRN.length
+    ? LRN.slice(-40).reverse().map(e=>`<div><b>${esc(e.p)}</b> : ${esc(e.a.slice(0,75))}</div>`).join("")
+    : (SAV.length ? SAV.slice(-20).reverse().map(e=>`<div><b>${esc(e.t)}</b> : ${esc(e.a.slice(0,70))}</div>`).join("") : "Encore rien — laisse la page ouverte ou pose des questions.");}
+function lev(a,b){const m=[];for(let i=0;i<=a.length;i++)m[i]=[i];for(let j=1;j<=b.length;j++)m[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return m[a.length][b.length]}
+function near(w){w=norm(w);let best=null,d=9;for(const x of LEX){const k=lev(w,x);if(k<d){d=k;best=x}}return d<=2&&d>0?best:null}
+function add(role,html){const d=document.createElement("div");d.className="m "+role;
+  d.innerHTML=`<div class="av">${role=="u"?"Moi":"C"}</div><div class="bd">${html}</div>`;$("#chat").appendChild(d);$("#chat").scrollTop=1e9;return d}
+async function J(u){const c=new AbortController(),t=setTimeout(()=>c.abort(),6000);
+  try{const r=await fetch(u,{signal:c.signal});return await r.json()}finally{clearTimeout(t)}}
+async function wiki(q){if(SRV){const r=await J("/chercher?q="+encodeURIComponent(q));if(!Array.isArray(r))throw new Error("srv");return r.map(x=>({title:x.t,extract:x.a,fullurl:x.u}))}
+  const d=await J("https://fr.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch="+encodeURIComponent(q)+"&gsrlimit=4&prop=extracts|info&exintro=1&explaintext=1&exsentences=3&exlimit=max&inprop=url&format=json&origin=*");
+  return Object.values((d.query||{}).pages||{}).sort((a,b)=>a.index-b.index)}
+async function wikt(w){if(SRV){const r=await J("/chercher?dico=1&q="+encodeURIComponent(w));if(!Array.isArray(r))throw new Error("srv");return r.length?{title:r[0].t,extract:r[0].a}:null}
+  const d=await J("https://fr.wiktionary.org/w/api.php?action=query&prop=extracts&explaintext=1&exintro=1&titles="+encodeURIComponent(w)+"&format=json&origin=*");
+  const p=Object.values((d.query||{}).pages||{})[0];return p&&!p.missing&&p.extract?p:null}
+const link=u=>String(u).startsWith("https://")?esc(u):"#";
+const tag=t=>`<span class="tag">${t}</span><br>`;
+
+// ===== COMPRÉHENSION LOCALE : racines, synonymes, score de similarité =====
+let netOff=0;
+const SYN="nom prenom appelle appel|age ans|createur auteur concu cree fabrique developpe|fais fait faire|merci remercie|aide aider fonction fonctionne|blague drole rire humour|internet web reseau|virus malware malveillant|code coder programmation programmer programme|apprendre ameliorer retenir|langue parle parles|nul bete con".split("|").map(g=>g.split(" "));
+const CAP=Object.fromEntries("france:Paris,australie:Canberra,espagne:Madrid,italie:Rome,allemagne:Berlin,japon:Tokyo,chine:Pékin,inde:New Delhi,russie:Moscou,canada:Ottawa,bresil:Brasilia,royaume uni:Londres,etats unis:Washington,maroc:Rabat,algerie:Alger,tunisie:Tunis,senegal:Dakar,portugal:Lisbonne,belgique:Bruxelles,suisse:Berne,egypte:Le Caire,turquie:Ankara,mexique:Mexico,argentine:Buenos Aires,grece:Athènes,pays bas:Amsterdam,suede:Stockholm,norvege:Oslo,pologne:Varsovie,coree du sud:Séoul".split(",").map(s=>s.split(":")));
+const KB=[
+["comment tu t'appelles|ton nom|quel est ton nom|tu t'appelles comment|ton prénom","Je m'appelle CORTEX, votre assistant IA local."],
+["comment ça va|comment vas-tu|comment va tu|tu vas bien","Très bien, merci ! Et vous ? Je suis prêt à chercher, calculer ou apprendre."],
+["qui t'a créé|qui est ton créateur|qui t'a conçu|qui t'a programmé","J'ai été conçu pour vous en HTML et JavaScript, avec une mémoire locale que vous pouvez enrichir."],
+["quel âge as-tu|ton âge|tu as quel âge","Je n'ai pas d'âge : je suis un programme, né le jour où ce fichier a été créé."],
+["merci|merci beaucoup|je te remercie","Avec plaisir !"],
+["au revoir|à bientôt|à plus|bonne nuit|bye","À bientôt ! Votre mémoire apprise reste enregistrée sur cet appareil."],
+["aide|aide-moi|que peux-tu faire|tu fais quoi|que fais-tu|à quoi tu sers|tes fonctions|comment tu fonctionnes","Je comprends vos phrases grâce à mon lexique et je cherche la phrase connue la plus proche. Je calcule (12*3), je définis des mots, je cherche sur le web si le réseau le permet, et j'apprends avec « retiens : clé = valeur »."],
+["raconte une blague|une blague|fais-moi rire|dis quelque chose de drôle","Pourquoi les plongeurs plongent-ils en arrière ? Parce que sinon ils tombent dans le bateau.||Que fait une fraise sur un cheval ? Tagada tagada !||Quel est le comble pour un électricien ? De ne pas être au courant."],
+["tu es intelligent|es-tu intelligent|tu es malin|tu comprends","Je fais de mon mieux : je compare les mots de votre phrase à ceux que je connais et je choisis la phrase la plus proche."],
+["comment marche ton cerveau|comment tu comprends|comment tu réfléchis","Je découpe votre phrase en mots, je les ramène à leur racine (avec des synonymes), puis je donne un score à chaque phrase connue. La meilleure devient ma réponse."],
+["qu'est-ce qu'une ia|intelligence artificielle|c'est quoi l'intelligence artificielle","Une intelligence artificielle est un programme qui accomplit des tâches liées à l'intelligence humaine : comprendre le langage, reconnaître des images, prendre des décisions."],
+["c'est quoi internet|qu'est-ce que le web|internet","Internet est le réseau mondial qui relie des millions d'ordinateurs. Le web est un service qui y circule : les pages consultables avec un navigateur."],
+["c'est quoi un algorithme|algorithme","Un algorithme est une suite d'instructions précises qui permet de résoudre un problème ou d'accomplir une tâche."],
+["c'est quoi un ordinateur|qu'est-ce qu'un ordinateur","Un ordinateur est une machine qui traite des informations en suivant des programmes."],
+["c'est quoi un virus informatique|qu'est-ce qu'un malware|virus","Un virus informatique est un programme malveillant qui se copie et perturbe ou espionne un système. On s'en protège avec des mises à jour et en évitant les fichiers douteux."],
+["c'est quoi la programmation|c'est quoi coder|qu'est-ce que le code","Programmer, c'est écrire des instructions dans un langage (Python, JavaScript…) pour qu'un ordinateur les exécute."],
+["comment apprendre à coder|apprendre la programmation","Commencez par un langage simple (Python ou JavaScript), faites de petits projets et cherchez chaque erreur. La pratique régulière compte plus que la théorie."],
+["vitesse de la lumière|quelle est la vitesse de la lumière","Environ 299 792 km par seconde dans le vide."],
+["combien de planètes dans le système solaire|planètes système solaire","Huit : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."],
+["plus grand océan|quel est le plus grand océan","Le Pacifique."],
+["combien de continents|liste des continents","Sept : Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe et Océanie."],
+["plus haute montagne|quelle est la plus haute montagne","L'Everest, à 8 849 m d'altitude."],
+["plus long fleuve|quel est le plus long fleuve","Le Nil et l'Amazone se disputent la place, autour de 6 650 km."],
+["qui a inventé l'ampoule|inventeur de l'ampoule","Thomas Edison a perfectionné l'ampoule à incandescence en 1879, après plusieurs précurseurs."],
+["qui a découvert l'Amérique|découverte de l'Amérique","Christophe Colomb y accoste en 1492, mais des peuples y vivaient depuis des millénaires."],
+["combien de jours dans une année|année bissextile","365 jours, et 366 les années bissextiles."],
+["combien de secondes dans une heure|secondes dans une heure","3 600 secondes."],
+["quel est le sens de la vie|sens de la vie","42, disent les fans de Douglas Adams. Plus sérieusement, la question reste ouverte et c'est à vous d'y répondre."],
+["comment t'améliorer|comment te mettre à jour|ajouter des mots|apprends-moi des choses","Dites-moi « retiens : question = réponse ». Je m'en souviendrai sur cet appareil."],
+["quelle langue parles-tu|tu parles français|parles-tu anglais","Je comprends et je réponds en français."],
+["mot de passe sécurisé|comment protéger mon mot de passe","Utilisez une phrase longue et unique par site, un gestionnaire de mots de passe et la double authentification."],
+["je m'ennuie|je m'ennuie un peu","Essayez un défi : demandez-moi une blague, un mot au hasard ou un calcul."],
+["je t'aime|je t'adore","C'est gentil, mais je suis un programme ; je reste là pour vous aider."],
+["tu es nul|tu es bête|t'es con","Je progresse grâce à vous : apprenez-moi la bonne réponse avec « retiens : question = réponse »."]];
+const stem=w=>{w=w.replace(/(s|x)$/,"");return w.length>5?w.slice(0,5):w};
+const CAN={};SYN.forEach((g,i)=>g.forEach(w=>CAN[stem(norm(w))]="§"+i));
+const tk=s=>norm(s).split(" ").filter(t=>t.length>1&&!STOP.has(t)).map(t=>{const w=stem(t);return CAN[w]||w});
+const IDX=[],DF={};let pending=null,LRN=[];
+function addIdx(i,p){const t=[...new Set(tk(p))];if(!t.length)return;IDX.push({i,p,t});t.forEach(w=>DF[w]=(DF[w]||0)+1)}
+KB.forEach((e,i)=>e[0].split("|").forEach(p=>addIdx(i,p)));
+try{LRN=JSON.parse(localStorage.cx_lrn||"[]")}catch(e){}
+LRN.forEach((e,k)=>addIdx(KB.length+k,e.p));
+const getA=i=>i<KB.length?KB[i][1]:LRN[i-KB.length].a;
+function learn(p,a,src){p=p.trim();a=String(a).trim();if(!p||!a)return;const k=LRN.findIndex(e=>norm(e.p)==norm(p));
+  if(k>=0){if(LRN[k].a!==a){LRN[k].a=a;LRN[k].u=Date.now();LRN[k].st=0}}else{LRN.push({p,a,s:src,u:Date.now(),st:0});addIdx(KB.length+LRN.length-1,p)}
+  try{vault.touch();brainSoon()}catch(e){}}
+function forget(){LRN=[];for(let k=IDX.length-1;k>=0;k--)if(IDX[k].i>=KB.length){IDX[k].t.forEach(w=>DF[w]--);IDX.splice(k,1)}try{localStorage.cx_lrn="[]"}catch(e){}try{vault.dropLrn()}catch(e){}}
+const W=w=>Math.log((IDX.length+1)/((DF[w]||0)+1))+1;
+const same=(a,b)=>a==b||(a.length>=5&&b.length>=5&&a[0]==b[0]&&a[1]==b[1]&&lev(a,b)<=1);
+function match(q){const t=[...new Set(tk(q))];if(!t.length)return null;let best={s:0};
+  for(const x of IDX){let ov=0,wa=0,wb=0;t.forEach(w=>{wa+=W(w);if(x.t.some(y=>same(w,y)))ov+=W(w)});x.t.forEach(y=>wb+=W(y));
+    if(!ov||ov/wa<0.42)continue;const s=2*ov/(wa+wb);if(s>best.s)best={s,x}}
+  return best.x?best:null}
+const ans=b=>esc(pick(String(getA(b.x.i)).split("||")));
+const pct=b=>Math.round(b.s*100)+" %";
+// ===== SAVOIR AUTO + COFFRE DE SAUVEGARDE MULTI-COUCHES =====
+// Couche 1 : IndexedDB (base du navigateur, grande capacité, écriture incrémentale)
+// Couche 2 : copie rapide localStorage (synchrone, filet de sécurité à la fermeture)
+// Couche 3 : fichier de secours (.json) + « cerveau intégré » (.html qui contient la mémoire)
+let SAV=[],INV={},INV2={},savN=0,SRV=false,busyS=false,SRVSEQ=0,SRVBUSY=false,BRAINOK=false,LASTBODY="",LASTPUSH=0,BT=0;
+const HOSTED=!!(window.claude&&typeof window.claude.use==="function");
+let SRVFAIL=0,SRVNEXT=0,WL=null,WLON=true;try{WLON=localStorage.getItem("cx_wl")!=="0"}catch(e){}
+let CLUSE=true,CLPAUSE=0,CLCALLS=0;try{CLUSE=localStorage.getItem("cx_cluse")!=="0"}catch(e){}
+let SAMPLE=null,DB=null,UID=null,DBREADY=false,DBBUSY=false,DBMETA=false,DBLAST=0,DBERR="";
+const DBDIRTY=new Set(),DBSIG=new Map();
+let INTERESTS=[];  // sujets demandés par toi → priorité haute
+const SAVK=new Set(), CAPSAV=20000, RECENT=[];
+// Lexique qui grandit tout seul : un mot vu dans 3 articles différents entre dans la liste
+const LEXBASE=LEX.length,LEXSET=new Set(LEX),LEXADD=[],WF=new Map();
+function addLexWord(w){if(typeof w!=="string"||!/^[a-z]{3,20}$/.test(w)||LEXSET.has(w)||LEXADD.length>=20000)return 0;
+  LEX.push(w);LEXSET.add(w);LEXADD.push(w);return 1}
+function feedWords(text){const seen=new Set();
+  norm(text).split(" ").forEach(w=>{
+    if(w.length<4||w.length>16||seen.has(w)||LEXSET.has(w)||STOP.has(w)||!/^[a-z]+$/.test(w))return;
+    seen.add(w);const c=(WF.get(w)||0)+1;
+    if(c>=3){WF.delete(w);if(addLexWord(w)){vault.dirtyLex=true;DBMETA=true}}else WF.set(w,c)});
+  if(WF.size>80000)WF.clear()}
+
+function rebuildInv(){INV={};INV2={};SAVK.clear();
+  SAV.forEach((e,i)=>{SAVK.add(e.t);e.tt.forEach(w=>(INV[w]=INV[w]||[]).push(i));e.ct.forEach(w=>(INV2[w]=INV2[w]||[]).push(i))})}
+// Ajoute un article au savoir (st=1 : déjà présent dans la base interne)
+function putSav(t,a,st,ts,k){
+  if(typeof t!=="string"||typeof a!=="string")return 0;
+  t=t.trim().slice(0,200);a=a.trim().slice(0,700);
+  if(!t||!a||SAVK.has(t))return 0;
+  const tt=[...new Set(tk(t.replace(/\s*\([^)]*\)\s*/g," ").trim()||t))];if(!tt.length)return 0;
+  const ct=[...new Set(tk(a.slice(0,320)))].slice(0,40);
+  if(SAV.length>=CAPSAV){   // plein : on retire d'abord les plus vieux articles « de fond », jamais tes sujets
+    let rm=new Set();for(let i=0;i<SAV.length&&rm.size<1000;i++)if(!SAV[i].k)rm.add(i);
+    if(rm.size<500){rm=new Set();for(let i=0;i<1000&&i<SAV.length;i++)rm.add(i)}
+    SAV=SAV.filter((e,i)=>{if(rm.has(i)){if(e.st)vault.pdel.push(e.t);return false}return true});rebuildInv()}
+  const i=SAV.push({t,tt,ct,a,ts:ts||Date.now(),st:st?1:0,k:k?1:0})-1;SAVK.add(t);
+  tt.forEach(w=>(INV[w]=INV[w]||[]).push(i));ct.forEach(w=>(INV2[w]=INV2[w]||[]).push(i));return 1}
+
+async function deliver(blob,name,mime){
+  const file=new File([blob],name,{type:mime});
+  try{if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:name});return "share"}}
+  catch(e){if(e&&e.name==="AbortError")return "abort"}
+  try{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();
+    setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);return "dl"}catch(e){}
+  return "fail"}
+
+const vault=(()=>{
+  const V={idb:null,idbOk:false,idbErr:"",lsOk:null,lsFull:false,persisted:null,lastOk:0,lastLs:0,lastFile:0,ready:false,
+    pdel:[],dirtyLs:false,dirtyMeta:false,flushing:false,timer:0,wiped:0,legacyDone:false};
+  const LEG=["cx_sav","cx_sav_bak","cx_lrn","cx_facts","cx_stats","cx_int","cx_sav_ts"];
+  const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+  const lsSet=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+  const lsDel=k=>{try{localStorage.removeItem(k)}catch(e){}};
+  const jparse=(s,d)=>{try{const x=JSON.parse(s);return x==null?d:x}catch(e){return d}};
+  const req=r=>new Promise((res,rej)=>{r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+  const txd=tx=>new Promise((res,rej)=>{tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error);tx.onabort=()=>rej(tx.error||new Error("abort"))});
+  const isClean=()=>!SAV.some(e=>!e.st)&&!LRN.some(e=>!e.st)&&!V.dirtyMeta&&!V.pdel.length;
+
+  // ---- état complet (export) ----
+  V.snap=()=>({app:"cortex",v:3,ts:Date.now(),facts,stats,int:INTERESTS.slice(-50),lex:LEXADD,
+    lrn:LRN.map(e=>({p:e.p,a:e.a,s:e.s,u:e.u||0})),sav:SAV.map(e=>({t:e.t,a:e.a,ts:e.ts,k:e.k}))});
+
+  V.brain=()=>({app:"cortex",v:3,facts,stats,int:INTERESTS.slice(-50),lex:LEXADD,
+    lrn:LRN.map(e=>({p:e.p,a:e.a,s:e.s,u:e.u||0}))});
+
+  // ---- fusion (additive : on n'écrase jamais ce qu'on sait déjà) ----
+  V.merge=(o,st)=>{
+    let ns=0,nl=0;if(!o||typeof o!=="object")return{ns,nl};
+    if(o.facts&&typeof o.facts==="object")for(const k in o.facts){
+      if(typeof o.facts[k]==="string"&&!(k in facts)){facts[k]=o.facts[k].slice(0,1500);if(!st)V.dirtyMeta=true}}
+    if(o.stats&&+o.stats.q>stats.q)stats.q=+o.stats.q;
+    if(Array.isArray(o.int)){const s=new Set(INTERESTS);const ad=o.int.filter(t=>typeof t==="string"&&t&&!s.has(t));
+      if(ad.length)INTERESTS=[...ad,...INTERESTS].slice(-50)}
+    if(Array.isArray(o.lrn)){
+      const mp=new Map(LRN.map((x,i)=>[norm(x.p),i]));
+      o.lrn.forEach(e=>{
+        if(!e||typeof e.p!=="string"||typeof e.a!=="string")return;
+        const p=e.p.trim().slice(0,300),a=e.a.trim().slice(0,1500);if(!p||!a)return;
+        const k=norm(p),u=+e.u||0;
+        if(mp.has(k)){const x=LRN[mp.get(k)];if(u>(x.u||0)&&x.a!==a){x.a=a;x.u=u;x.st=st?1:0;nl++}}
+        else{LRN.push({p,a,s:e.s||"import",u:u||Date.now(),st:st?1:0});addIdx(KB.length+LRN.length-1,p);mp.set(k,LRN.length-1);nl++}})}
+    if(Array.isArray(o.sav))o.sav.forEach(e=>{if(e&&putSav(e.t,e.a,st,+e.ts,e.k))ns++});
+    if(Array.isArray(o.lex))o.lex.forEach(w=>{if(addLexWord(w)&&!st)V.dirtyLex=true});
+    if(ns||nl)V.dirtyLs=true;
+    return{ns,nl}};
+
+  // ---- chargement synchrone : copie rapide + anciens formats ----
+  V.loadSync=()=>{
+    V.wiped=+lsGet("cx_wiped")||0;
+    const o=jparse(lsGet("cx_v3"),null);if(o){V.lastFile=+o.lf||0;V.merge(o,0)}
+    V.merge({sav:jparse(lsGet("cx_sav")||lsGet("cx_sav_bak"),[]),lrn:jparse(lsGet("cx_lrn"),[]),
+      facts:jparse(lsGet("cx_facts"),{}),stats:jparse(lsGet("cx_stats"),{}),int:jparse(lsGet("cx_int"),[])},0)};
+
+  // ---- IndexedDB ----
+  V.open=()=>new Promise((res,rej)=>{
+    if(!window.indexedDB)return rej(new Error("IndexedDB absent"));
+    let r;try{r=indexedDB.open("cortex_brain",1)}catch(e){return rej(e)}
+    r.onupgradeneeded=()=>{const d=r.result;
+      if(!d.objectStoreNames.contains("sav"))d.createObjectStore("sav",{keyPath:"t"});
+      if(!d.objectStoreNames.contains("lrn"))d.createObjectStore("lrn",{keyPath:"k"});
+      if(!d.objectStoreNames.contains("meta"))d.createObjectStore("meta",{keyPath:"id"})};
+    r.onsuccess=()=>{V.idb=r.result;V.idb.onversionchange=()=>{try{V.idb.close()}catch(e){}V.idbOk=false};res()};
+    r.onerror=()=>rej(r.error);r.onblocked=()=>rej(new Error("bloqué"));
+    setTimeout(()=>rej(new Error("délai dépassé")),4000)});
+  V.loadIdb=async()=>{
+    const tx=V.idb.transaction(["sav","lrn","meta"],"readonly");
+    const [sv,ln,mt]=await Promise.all([req(tx.objectStore("sav").getAll()),req(tx.objectStore("lrn").getAll()),req(tx.objectStore("meta").getAll())]);
+    const main=(mt||[]).find(m=>m.id==="main"),wp=(mt||[]).find(m=>m.id==="wiped");
+    if(wp&&wp.ts>V.wiped)V.wiped=wp.ts;
+    const lx=(mt||[]).find(m=>m.id==="lex");if(lx&&Array.isArray(lx.w))lx.w.forEach(addLexWord);
+    V.merge({sav:sv,lrn:(ln||[]).map(e=>({p:e.p,a:e.a,s:e.s,u:e.u})),
+      facts:main&&main.facts,stats:main&&main.stats,int:main&&main.int},1);
+    if(main&&main.lf>V.lastFile)V.lastFile=main.lf;
+    if(main&&+main.srv>0&&SRVSEQ===0)SRVSEQ=+main.srv};
+
+  // ---- cerveau intégré dans le fichier HTML ----
+  V.seed=()=>{const el=document.getElementById("cxseed");if(!el)return;
+    const o=jparse(el.textContent,null);if(!o||!(o.ts>V.wiped))return;V.merge(o,0)};
+
+  // ---- écriture incrémentale dans IndexedDB ----
+  V.flush=async()=>{
+    if(!V.idbOk||V.flushing||!V.ready)return false;
+    V.flushing=true;
+    const sq=SRVSEQ,sv=SAV.filter(e=>!e.st),ln=LRN.filter(e=>!e.st),del=V.pdel.splice(0),md=V.dirtyMeta,lexDue=V.dirtyLex&&Date.now()-(V.lexT||0)>8000;
+    try{
+      if(sv.length||ln.length||del.length||md||lexDue){
+        sv.forEach(e=>e.st=1);ln.forEach(e=>e.st=1);V.dirtyMeta=false;
+        const tx=V.idb.transaction(["sav","lrn","meta"],"readwrite");
+        const S=tx.objectStore("sav"),L=tx.objectStore("lrn"),M=tx.objectStore("meta");
+        del.forEach(t=>S.delete(t));
+        sv.forEach(e=>S.put({t:e.t,a:e.a,ts:e.ts,k:e.k}));
+        ln.forEach(e=>L.put({k:norm(e.p),p:e.p,a:e.a,s:e.s,u:e.u||0}));
+        M.put({id:"main",facts,stats,int:INTERESTS.slice(-50),lf:V.lastFile,srv:sq,ts:Date.now()});
+        if(lexDue){M.put({id:"lex",w:LEXADD.slice()});V.dirtyLex=false;V.lexT=Date.now()}
+        await txd(tx);
+      }
+      V.idbErr="";V.flushing=false;return true;
+    }catch(e){
+      sv.forEach(x=>x.st=0);ln.forEach(x=>x.st=0);V.dirtyMeta=true;if(lexDue)V.dirtyLex=true;V.pdel.push(...del);
+      V.idbErr=String(e&&e.message||e).slice(0,60);V.flushing=false;return false}};
+
+  // ---- copie rapide localStorage (une seule clé, réduite automatiquement si le quota est plein) ----
+  V.mirror=()=>{
+    const base={v:3,ts:Date.now(),lf:V.lastFile,facts,stats,int:INTERESTS.slice(-50),lex:LEXADD.slice(-4000)};
+    const lrn=LRN.map(e=>({p:e.p,a:e.a,s:e.s,u:e.u||0})),sav=SAV.map(e=>({t:e.t,a:e.a,ts:e.ts,k:e.k}));
+    const steps=V.idbOk?[[3000,800],[1500,400],[600,150],[200,0]]:[[8000,6000],[4000,3000],[2000,1500],[800,600],[300,200],[100,0]];
+    for(const [nl,ns] of steps){
+      if(lsSet("cx_v3",JSON.stringify({...base,lrn:lrn.slice(-nl),sav:sav.slice(-ns)}))){
+        V.lsOk=true;V.lsFull=(lrn.length<=nl&&sav.length<=ns);V.lastLs=Date.now();V.dirtyLs=false;return true}}
+    V.lsOk=false;return false};
+
+  V.legacyClean=()=>{if(V.legacyDone)return;V.legacyDone=true;LEG.forEach(lsDel)};
+
+  V.tick=async()=>{
+    if(!V.ready)return;
+    if(V.dirtyLs||!V.lastLs)V.mirror();
+    if(V.idbOk)await V.flush();
+    const clean=isClean()&&!V.idbErr;
+    if(clean||(!V.idbOk&&V.lsOk))V.lastOk=Date.now();
+    if(!V.legacyDone&&((V.idbOk&&clean)||(!V.idbOk&&V.lsFull&&V.lsOk)))V.legacyClean();
+    try{vaultUI()}catch(e){}};
+  V.touch=meta=>{V.dirtyLs=true;if(meta)V.dirtyMeta=true;if(!V.timer)V.timer=setTimeout(()=>{V.timer=0;V.tick()},1200)};
+  V.flushNow=force=>{if(V.dirtyLs||force)V.mirror();return V.ready?V.flush():Promise.resolve(false)};
+
+  V.dropLrn=async()=>{V.dirtyLs=true;V.mirror();
+    if(!V.idbOk)return;try{const tx=V.idb.transaction(["lrn"],"readwrite");tx.objectStore("lrn").clear();await txd(tx)}catch(e){}};
+  V.wipe=async()=>{
+    facts={};stats={q:0};INTERESTS=[];SAV=[];INV={};INV2={};SAVK.clear();V.pdel=[];RECENT.length=0;LEXADD.length=0;WF.clear();V.dirtyLex=false;
+    LEX.length=LEXBASE;LEXSET.clear();LEX.forEach(w=>LEXSET.add(w));forget();
+    const now=Date.now();V.wiped=now;lsSet("cx_wiped",String(now));
+    ["cx_v3",...LEG].forEach(lsDel);V.dirtyMeta=false;V.lastLs=0;
+    if(V.idbOk){try{const tx=V.idb.transaction(["sav","lrn","meta"],"readwrite");
+      tx.objectStore("sav").clear();tx.objectStore("lrn").clear();tx.objectStore("meta").clear();
+      tx.objectStore("meta").put({id:"wiped",ts:now});await txd(tx)}catch(e){V.idbErr="effacement"}}
+    if(SRV){try{fetch("/oublier",{method:"POST",headers:{"X-Cortex":"1"}})}catch(e){}}
+    if(DB&&DBREADY){try{dbWipe()}catch(e){}}
+    V.mirror()};
+
+  // ---- fichiers de secours ----
+  const stamp=()=>new Date().toISOString().slice(0,10);
+  const filed=r=>{if(r==="share"||r==="dl"){V.lastFile=Date.now();V.touch(1)}return r};
+  V.exportJson=async()=>{const txt=JSON.stringify(V.snap());
+    const r=await deliver(new Blob([txt],{type:"application/json"}),"cortex-cerveau-"+stamp()+".json","application/json");
+    return{r:filed(r),txt}};
+  V.exportHtml=async()=>{
+    const c=document.documentElement.cloneNode(true);
+    c.querySelector("#cxseed").textContent=JSON.stringify(V.snap()).replace(/</g,"\\u003c");
+    ["#chat","#journalList","#facts","#chips"].forEach(s=>{c.querySelector(s).innerHTML=""});
+    c.querySelector("#side").className="";c.querySelector("#journal").style.display="none";
+    const m=c.querySelector("#mic");m.className="alt";m.textContent="Voix";
+    c.querySelector("#live").textContent="";c.querySelector(".dot").className="dot";
+    const txt="<!DOCTYPE html>\n"+c.outerHTML;
+    const r=await deliver(new Blob([txt],{type:"text/html"}),"cortex-ios.html","text/html");
+    return{r:filed(r),txt}};
+  V.importText=txt=>{
+    let o=null;
+    try{if(/^\s*</.test(txt)){const el=new DOMParser().parseFromString(txt,"text/html").getElementById("cxseed");o=el&&JSON.parse(el.textContent)}else o=JSON.parse(txt)}catch(e){}
+    if(!o||!(Array.isArray(o.sav)||Array.isArray(o.lrn)))return null;
+    const r=V.merge(o,0);V.touch(1);return r};
+
+  V.protect=async()=>{try{if(navigator.storage&&navigator.storage.persisted){
+    V.persisted=(await navigator.storage.persisted())||(navigator.storage.persist?await navigator.storage.persist():false)}}catch(e){}};
+
+  V.init=async()=>{
+    V.loadSync();
+    try{await V.open();V.idbOk=true;await V.loadIdb()}catch(e){V.idbOk=false;V.idbWhy=String(e&&e.message||e)}
+    V.seed();V.ready=true;V.protect();await V.tick()};
+  return V})();
+
+function persistAll(){try{brainPush(true)}catch(e){}try{dbFlush()}catch(e){}return vault.flushNow()}
+vault.init().then(()=>{try{srvPull()}catch(e){}try{siteInit()}catch(e){}try{wakeLock();iosHint()}catch(e){}});
+
+// Définition du savoir : meilleur article dont le titre correspond à la question
+function matchSav(q){
+  const t=[...new Set(tk(q))];if(!t.length)return null;
+  const hit={};t.forEach(w=>(INV[w]||[]).forEach(i=>hit[i]=(hit[i]||0)+1));
+  let best=null,bs=0;
+  for(const k in hit){const e=SAV[k];if(!e)continue;
+    const cov=hit[k]/t.length,prec=hit[k]/e.tt.length;
+    if(cov<0.5||prec<0.5)continue;
+    const s=cov*0.6+prec*0.4;if(s>bs){bs=s;best=e}}
+  return best&&bs>=0.6?{e:best,s:bs}:null}
+
+// Hors ligne : retrouve un article dont le CONTENU contient (presque) tous les mots de la question
+function matchSavText(q){
+  const t=[...new Set(tk(q))];if(t.length<2)return null;
+  const N=SAV.length||1,hit={};let tot=0;
+  t.forEach(w=>{const L=INV2[w];tot+=Math.log(N/((L&&L.length)||1))+1;
+    if(!L||L.length>N*0.15)return;const wt=Math.log(N/L.length)+1;L.forEach(i=>hit[i]=(hit[i]||0)+wt)});
+  let best=null,bs=0;for(const k in hit){const sc=hit[k]/tot;if(sc>bs){bs=sc;best=SAV[k]}}
+  return best&&bs>=0.8?{e:best,s:bs}:null}
+
+function vaultUI(){
+  const set=(id,t)=>{const el=$(id);if(el)el.textContent=t};
+  const hm=ts=>ts?new Date(ts).toLocaleTimeString("fr-FR"):"—";
+  set("#vIdb",vault.idbOk?(vault.idbErr?"erreur":"actif"):(vault.ready?"indisponible":"…"));
+  set("#vLs",vault.lsOk===null?"…":vault.lsOk?"actif":"plein");
+  set("#vPers",vault.persisted===null?"?":vault.persisted?"oui":"non");
+  set("#vLast",hm(vault.lastOk));try{clStatus()}catch(e){}set("#vSrvL",HOSTED?"Sauvegarde sur le site":"Disque (cortex.py)");set("#vSrv",HOSTED?(DBERR?"erreur : "+DBERR:DB?(DBLAST?hm(DBLAST):"…"):"…"):SRV?(LASTPUSH?hm(LASTPUSH):"…"):"absent");
+  const d=vault.lastFile?Math.floor((Date.now()-vault.lastFile)/864e5):-1;
+  const has=SAV.length+LRN.length>50;
+  set("#vFile",(has&&(d<0||d>=3)?"⚠ ":"")+(d<0?"jamais":d==0?"aujourd’hui":"il y a "+d+" j"));
+}
+
+
+async function etat(){
+  const n=SAV.length, p=LRN.length, i=INTERESTS.length;
+  let msg=n+" arts · "+p+" phrases"+(rate()?" · "+rate()+"/min":"");
+  if(learnBusy) msg="⚡ Apprend… · "+msg;
+  else msg="Auto · "+msg+(i?" · "+i+" sujets":"")+(vault.lastOk?" · 💾":"");
+  if(NET==="bloqué") msg="⚠️ Réseau bloqué · "+msg;
+  $("#live").textContent=msg;
+  $(".dot").classList.toggle("on", autoLearn && !document.hidden);
+  try{vaultUI()}catch(e){}
+}
+
+function addArticle(t, texte, kind){
+  if(!t||texte.length<50) return 0;
+  if(texte.indexOf("peut désigner")===0) return 0;
+  const ok=putSav(t,texte.slice(0,550),0,0,kind);
+  if(ok){TS.push(Date.now());feedWords(texte);vault.touch();if(HOSTED)DBDIRTY.add(chunkOf(t.trim().slice(0,200)))}
+  return ok;
+}
+
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const TS=[];let ACTIVE=0,NET="?",ERRS=0,lastErr="";
+const rate=()=>{const c=Date.now()-60000;while(TS.length&&TS[0]<c)TS.shift();return TS.length};
+// 1 requête = jusqu'à 20 articles (limite de l'API Wikipédia pour les résumés)
+const WAPI="https://fr.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&exintro=1&explaintext=1&exsentences=4&exlimit=max";
+async function wget(gen){const d=await J(WAPI+"&"+gen);return Object.values((d.query||{}).pages||{})}
+function ingest(pages,kind){let a=0;
+  pages.forEach(p=>{const x=(p.extract||"").replace(/\s+/g," ").trim();if(p.title&&addArticle(p.title,x,kind)){a++;RECENT.push(p.title)}});
+  if(RECENT.length>300)RECENT.splice(0,RECENT.length-300);return a}
+async function wikiRandom(n){return ingest(await wget("generator=random&grnnamespace=0&grnlimit="+Math.min(n||20,20)),0)}
+async function wikiSearch(q,limit,kind){return ingest(await wget("generator=search&gsrnamespace=0&gsrlimit="+Math.min(limit||20,20)+"&gsrsearch="+encodeURIComponent(q)),kind||0)}
+async function wikiLinks(t){return ingest(await wget("generator=links&gplnamespace=0&gpllimit=20&titles="+encodeURIComponent(t)),0)}
+
+// Sujets que les gens demandent souvent + culture générale utile
+const USEFUL="intelligence artificielle chatgpt python javascript programmation histoire de france révolution française seconde guerre mondiale système solaire trou noir big bang dinosaure évolution charles darwin albert einstein isaac newton tesla elon musk steve jobs bill gates internet wifi 5g bitcoin cryptomonnaie économie inflation chômage réchauffement climatique énergie nucléaire énergie solaire voiture électrique fusée nasa spacex médecine cancer vaccin covid coeur cerveau anatomie psychologie anxiété sommeil sport football tennis olympique cinéma netflix musique rap classique shakespeare victor hugo philosophie socrate platon capital de la france population mondiale plus haut sommet plus long fleuve vitesse de la lumière".split(" ");
+
+function trackInterest(q){
+  const words=norm(q).split(" ").filter(w=>w.length>3&&!STOP.has(w));
+  if(!words.length) return;
+  const topic=words.slice(0,4).join(" ");
+  INTERESTS=INTERESTS.filter(t=>t!==topic);
+  INTERESTS.push(topic);
+  if(INTERESTS.length>50) INTERESTS.shift();
+}
+
+async function deepen(topic){
+  if(!topic) return 0;
+  try{
+    let n=await wikiSearch(topic, 20, 1);
+    const parts=topic.split(" ");
+    if(parts.length>=2) n+=await wikiSearch(parts.slice(0,2).join(" "), 12, 1);
+    return n;
+  }catch(e){return 0}
+}
+
+let autoLearn=true, learnBusy=false, learnOk=0, learnFail=0;
+
+// Priorité : TES sujets → liens des articles déjà appris (boule de neige) → culture utile → hasard
+function pickMode(){
+  const full=SAV.length>=CAPSAV*0.95;
+  if(full)return INTERESTS.length?"int":"idle";
+  const r=Math.random(),hasI=INTERESTS.length>0,hasR=RECENT.length>5;
+  if(hasI&&r<0.30)return "int";
+  if(hasR&&r<0.60)return "lnk";
+  if(r<0.75)return "use";
+  return "rnd"}
+async function job(){
+  const m=pickMode();
+  if(m==="int"){const t=INTERESTS[INTERESTS.length-1-Math.floor(Math.random()*Math.min(INTERESTS.length,8))];
+    let n=await wikiSearch(t,20,1);const p=t.split(" ");if(p.length>=2)n+=await wikiSearch(p.slice(0,2).join(" "),12,1);return n}
+  if(m==="lnk")return wikiLinks(RECENT[Math.floor(Math.random()*RECENT.length)]);
+  if(m==="use")return wikiSearch(USEFUL[Math.floor(Math.random()*USEFUL.length)],20,0);
+  if(m==="rnd")return wikiRandom(20);
+  await sleep(4000);return 0}
+let WANT=3;
+async function worker(id){
+  for(;;){
+    if(!autoLearn||HOSTED||document.hidden||SRV||SRVBUSY||!vault.ready||id>=WANT){await sleep(id>=WANT?2000:700);continue}
+    ACTIVE++;learnBusy=true;
+    try{await job();ERRS=0;NET="ok";learnFail=0;learnOk++}
+    catch(e){ERRS++;learnFail=ERRS;lastErr=String(e&&e.message||e).slice(0,40);if(ERRS>=3){if(NET!=="bloqué"&&!window.warnedNet){window.warnedNet=1;add("c",tag("Réseau")+"Internet est bloqué dans cet aperçu : je ne peux rien apprendre ici. Lance <b>cortex.py</b> dans iSH (il apprend tout seul avec le vrai réseau et sauvegarde sur le disque), puis ouvre <b>http://127.0.0.1:8000</b> dans Safari.")}NET="bloqué"}}
+    ACTIVE--;learnBusy=ACTIVE>0;
+    const full=SAV.length>=CAPSAV*0.95;
+    WANT=(ERRS>=3||full)?1:3;
+    await sleep(ERRS?Math.min(30000,1000*Math.pow(2,Math.min(ERRS,5))):(full?2500:250))}}
+for(let i=0;i<4;i++)worker(i);   // 3 en parallèle (4e en réserve) — se calme si le réseau bloque
+
+// ===== LIAISON AVEC cortex.py (serveur d'apprentissage dans iSH) =====
+async function srvPull(){
+  if(HOSTED||SRVBUSY||!vault.ready||Date.now()<SRVNEXT||!/^https?:/.test(location.protocol))return;
+  SRVBUSY=true;
+  try{
+    for(let g=0;g<30;g++){
+      const c=new AbortController(),tm=setTimeout(()=>c.abort(),20000);let r;
+      try{r=await (await fetch("/savoir?since="+SRVSEQ+"&max=2000",{signal:c.signal})).json()}finally{clearTimeout(tm)}
+      if(!r||r.app!=="cortex-srv")throw new Error("pas de serveur");
+      SRV=true;SRVFAIL=0;SRVNEXT=0;NET="ok";ERRS=0;learnFail=0;
+      if(!BRAINOK){try{const b=await (await fetch("/cerveau")).json();
+        if(b&&b.app==="cortex"){vault.merge(b,0);vault.touch(1);side()}
+        BRAINOK=true}catch(e){}}
+      if(r.seq<SRVSEQ){SRVSEQ=0;continue}
+      let n=0;(r.sav||[]).forEach(e=>{if(putSav(e.t,e.a,0,e.ts,e.k)){n++;TS.push(Date.now());feedWords(e.a)}});
+      SRVSEQ=r.next;
+      if(n)vault.touch();
+      if(!r.more)break}
+  }catch(e){if(SRV){SRV=false;NET="?"}SRVFAIL++;SRVNEXT=Date.now()+Math.min(60000,4000*Math.pow(2,SRVFAIL))}
+  SRVBUSY=false}
+// ===== VERSION HÉBERGÉE : sauvegarde sur le site + apprentissage avec Claude =====
+const chunkOf=t=>{let h=2166136261;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)%128};
+const chunkLrn=p=>{const t=norm(p);let h=2166136261;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)%32};
+async function siteInit(){
+  if(!HOSTED)return;
+  ["#btnExport","#btnExportHtml","#btnImport"].forEach(s=>{const e=$(s);if(e)e.style.display="none"});
+  try{SAMPLE=await claude.use("sample")}catch(e){SAMPLE=null}
+  {const c=$("#clCard");if(c)c.style.display=""}
+  if(SAMPLE){addChips();add("c",tag("Site")+"Ici je n’apprends pas tout seul : appuie sur <b>🧠 Apprendre un lot</b> (ou pose-moi une question que je ne connais pas) et je retiens tout, sauvegardé sur le site.")}
+  else add("c",tag("Site")+"Claude n’est pas disponible dans cet affichage : ouvre ce site depuis l’app Claude (pas depuis un navigateur) pour que je puisse apprendre et sauvegarder.");
+  clStatus();
+  try{
+    const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+    if(!db||!user)return;
+    UID=await user.id();if(!UID)return;
+    const col=db.collection("data/users/"+UID);
+    const snap=await Promise.race([col.get(),new Promise((_,rj)=>setTimeout(()=>rj({code:"délai"}),12000))]);
+    const indb=new Set();
+    snap.docs.forEach(d=>{const x=d.data()||{};
+      if(d.id==="brain"&&x.b)vault.merge(x.b,0);
+      else if(d.id==="lex"&&Array.isArray(x.w))vault.merge({lex:x.w},0);
+      else if(d.id.startsWith("lrn_")&&Array.isArray(x.l))vault.merge({lrn:x.l},0);
+      else if(d.id.startsWith("sav_")&&Array.isArray(x.sav))x.sav.forEach(e=>{if(e&&typeof e.t==="string"){indb.add(e.t);if(putSav(e.t,e.a,0,e.ts,e.k))feedWords(e.a)}})});
+    SAV.forEach(e=>{if(!indb.has(e.t))DBDIRTY.add(chunkOf(e.t))});
+    DB=db;DBMETA=true;DBREADY=true;vault.touch(1);side();dbFlush();
+  }catch(e){DBERR=(e&&e.code)||"erreur"}}
+async function dbFlush(){
+  if(!DB||!DBREADY||DBBUSY)return;
+  DBBUSY=true;
+  try{
+    const col=DB.collection("data/users/"+UID);
+    if(DBMETA){
+      DBMETA=false;
+      const parts={brain:{b:{app:"cortex",v:3,facts,stats,int:INTERESTS.slice(-50)}},lex:{w:LEXADD.slice(-12000)}};
+      const bk=[];for(let k=0;k<32;k++)bk.push([]);
+      LRN.forEach(e=>bk[chunkLrn(e.p)].push({p:e.p,a:e.a,s:e.s,u:e.u||0}));
+      bk.forEach((arr,k)=>{if(arr.length||DBSIG.has("lrn_"+k))parts["lrn_"+k]={l:arr}});
+      for(const id in parts){const s=JSON.stringify(parts[id]);
+        if(DBSIG.get(id)!==s){try{await col.doc(id).set(parts[id])}catch(er){DBMETA=true;throw er}DBSIG.set(id,s)}}}
+    if(DBDIRTY.size){
+      const ks=new Set(DBDIRTY);DBDIRTY.clear();const bk={};
+      SAV.forEach(e=>{const k=chunkOf(e.t);if(ks.has(k))(bk[k]=bk[k]||[]).push({t:e.t,a:e.a,ts:e.ts,k:e.k})});
+      for(const k of ks){try{await col.doc("sav_"+k).set({sav:bk[k]||[]})}catch(er){DBDIRTY.add(k);throw er}}}
+    DBLAST=Date.now();DBERR="";
+  }catch(e){DBERR=(e&&e.code)||"erreur"}
+  DBBUSY=false}
+async function dbWipe(){
+  try{const col=DB.collection("data/users/"+UID);const s=await col.get();DBSIG.clear();DBDIRTY.clear();DBMETA=false;
+    for(const d of s.docs){await col.doc(d.id).delete()}}catch(e){DBERR=(e&&e.code)||"erreur"}}
+let CLN=0,CLBUSY=false,CLSTOP=false,CLRUN=false;
+function clStatus(){
+  if(!HOSTED)return;
+  const el=$("#clStat");if(!el)return;
+  const ok1=!!SAMPLE,ok2=!!DB&&!DBERR;
+  const g=$("#clGo"),g5=$("#clGo5");if(g)g.disabled=!SAMPLE||CLBUSY;if(g5)g5.disabled=!SAMPLE;
+  el.textContent=(ok1?"Claude : prêt":"Claude : indisponible")+" · sauvegarde sur le site : "+(ok2?"active":DB?"erreur "+DBERR:"indisponible")+
+    (ok1&&ok2?"":" — ouvre ce site depuis l’app Claude (pas depuis un navigateur).")+(CLN?" · "+CLN+" articles appris ici":"")+" · appels Claude : "+CLCALLS;
+  const u=$("#clUseBtn");if(u)u.textContent="Claude pour les questions inconnues : "+(CLUSE?"OUI":"NON")}
+function addChips(){
+  if(window._clChips)return;window._clChips=1;
+  [["🧠 Apprendre un lot",()=>claudeBatch("")],["🧠 Apprendre 5 lots",()=>claudeRun(5)]].forEach(([t,f])=>{
+    const b=document.createElement("button");b.textContent=t;b.type="button";b.onclick=f;$("#chips").appendChild(b)})}
+async function claudeBatch(topic,quiet){
+  if(!SAMPLE||CLBUSY)return -1;
+  CLBUSY=true;const b=$("#clGo");if(b){b.disabled=true;b.textContent="Claude réfléchit…"}
+  const base=(topic||"").trim()||INTERESTS[INTERESTS.length-1]||USEFUL[Math.floor(Math.random()*USEFUL.length)];
+  let n=-1;
+  try{
+    CLCALLS++;const arr=await SAMPLE.json("Tu remplis la mémoire d’une IA francophone. Sujet : « "+base+" ». Réponds uniquement par un tableau JSON de 25 objets {\"t\":\"Titre court\",\"a\":\"Résumé factuel de 2 à 3 phrases\"}. Varie les sous-thèmes. Ne mets que des faits dont tu es certain, n’invente rien.",{modelTier:"quick",cache:false});
+    n=0;(Array.isArray(arr)?arr:[]).forEach(o=>{if(o&&typeof o.t==="string"&&typeof o.a==="string"&&addArticle(o.t.slice(0,120),o.a,1))n++});
+    CLN+=n;persistAll();side();
+    if(!quiet)add("c",tag("Apprentissage")+"+"+n+" articles appris sur « "+esc(base)+" » (via Claude), sauvegardés sur le site. Total : "+SAV.length+".");
+  }catch(e){const c=e&&e.code;
+    add("c",tag("Apprentissage")+(c==="not_granted"?"Autorisation de Claude refusée.":c==="rate_limited"?"Limite d’utilisation atteinte : réessaie plus tard.":"Échec ("+esc(c||"erreur")+"). Réessaie."))}
+  if(b){b.disabled=false;b.textContent="Apprendre un lot (25 articles)"}CLBUSY=false;clStatus();return n}
+async function claudeRun(k){
+  if(!SAMPLE)return;
+  if(CLRUN){CLSTOP=true;return}
+  CLRUN=true;CLSTOP=false;const g5=$("#clGo5");let tot=0;
+  const first=($("#clTopic").value||"").trim(),ASP=["histoire","science","personnalités","lieux","concepts"];
+  for(let i=0;i<k&&!CLSTOP;i++){
+    if(g5)g5.textContent="Stop ("+(i+1)+"/"+k+")";
+    const topic=first?(i?first+" — "+ASP[i%ASP.length]:first):(INTERESTS[INTERESTS.length-1-i]||USEFUL[Math.floor(Math.random()*USEFUL.length)]);
+    const n=await claudeBatch(topic,true);
+    if(n<0)break;tot+=n}
+  CLRUN=false;if(g5)g5.textContent="Apprendre 5 lots d’affilée";
+  add("c",tag("Apprentissage")+"+"+tot+" articles appris (via Claude). Total : "+SAV.length+" articles, sauvegardés sur le site.")}
+{const g=$("#clGo");if(g)g.onclick=()=>claudeBatch($("#clTopic").value);const g5=$("#clGo5");if(g5)g5.onclick=()=>claudeRun(5);const u=$("#clUseBtn");if(u)u.onclick=()=>{CLUSE=!CLUSE;try{localStorage.setItem("cx_cluse",CLUSE?"1":"0")}catch(e){}clStatus()}}
+
+// Sauvegarde du cerveau sur le disque du serveur : toutes les 5 s, 1,5 s après chaque apprentissage, et à la fermeture
+function brainSoon(){DBMETA=true;clearTimeout(BT);BT=setTimeout(()=>{brainPush();dbFlush()},1500)}
+async function brainPush(final){
+  if(!SRV||!BRAINOK)return false;
+  const body=JSON.stringify(vault.brain());
+  if(body===LASTBODY)return true;
+  try{
+    const r=await fetch("/sauver",{method:"POST",headers:{"X-Cortex":"1","Content-Type":"application/json"},body,keepalive:!!final&&body.length<60000});
+    if(r.ok){LASTBODY=body;LASTPUSH=Date.now();return true}
+  }catch(e){}
+  return false}
+setInterval(()=>brainPush(),5000);
+async function wakeLock(){
+  try{if(WLON&&!HOSTED&&!WL&&!document.hidden&&navigator.wakeLock){WL=await navigator.wakeLock.request("screen");WL.addEventListener("release",()=>{WL=null})}}catch(e){WL=null}
+  const b=$("#btnWL");if(b)b.textContent="Écran allumé pendant l’apprentissage : "+(WLON?"OUI":"NON")}
+{const b=$("#btnWL");if(b)b.onclick=async()=>{WLON=!WLON;try{localStorage.setItem("cx_wl",WLON?"1":"0")}catch(e){}
+  if(!WLON&&WL){try{await WL.release()}catch(e){}WL=null}wakeLock()}}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)wakeLock()});
+document.addEventListener("pointerdown",()=>{if(!WL)wakeLock()});
+function iosHint(){
+  try{
+    if(HOSTED||navigator.standalone||!/iPhone|iPad|iPod/.test(navigator.userAgent)||!/^https:/.test(location.protocol)||/^(127\.|localhost)/.test(location.hostname))return;
+    if(localStorage.getItem("cx_hint"))return;localStorage.setItem("cx_hint","1");
+    add("c",tag("Astuce")+"Pour l’avoir comme une app : bouton <b>Partager</b> de Safari → <b>Sur l’écran d’accueil</b>. Garde l’app ouverte et l’écran allumé : j’apprends seul pendant ce temps, et tout est sauvegardé en continu, même si tu fermes.")
+  }catch(e){}}
+setInterval(()=>dbFlush(),6000);
+setInterval(srvPull,4000);srvPull();
+
+setInterval(()=>vault.tick(),3000);
+setInterval(()=>{side();etat();}, 1500);  // chiffres en direct
+document.addEventListener("visibilitychange", ()=>{if(document.hidden)persistAll();});
+document.addEventListener("freeze", ()=>{persistAll();});
+window.addEventListener("pagehide", ()=>{persistAll();});
+window.addEventListener("beforeunload", ()=>{persistAll();});
+
+
+
+
+// ===== CERVEAU : analyse d'intention + mémoire + recherche =====
+async function think(q){
+  if(pending){const p=pending;pending=null;
+    if(/^(annule|non|laisse|peu importe|stop)\b/.test(norm(q)))return tag("Apprentissage")+"D'accord, je laisse tomber.";
+    learn(p,q,"conv");side();return tag("Apprentissage")+"Merci, c'est appris ! Si vous me posez une question proche de « "+esc(p)+" », je répondrai ça.";}
+  const n=norm(q);stats.q++;save();side();
+  if(/\bqui\b.*\b(t a|ta|tas)\b.*\b(fait|cree|concu|programme|fabrique|developpe)/.test(n))return tag("Cerveau local · 100 %")+esc(KB.find(e=>e[0].startsWith("qui t'a créé"))[1]);
+  if(/\bca va\b/.test(n))return tag("Dialogue")+"Ça va très bien, merci ! Et vous ? Posez-moi une question quand vous voulez.";
+  if(/^(tu es|tu est|t es|es tu|est tu)\b/.test(n)&&/\b(gay|homo|bi|lesbienne|trans|hetero|garcon|fille|homme|femme|croyant|religieux|musulman|chretien|juif)\b/.test(n))return tag("Dialogue")+pick(["Je suis un programme : je n'ai ni genre, ni orientation, ni vie privée. En revanche, je peux chercher, calculer ou définir un mot pour vous.","Je suis juste un assistant logiciel, donc ce genre de question ne s'applique pas à moi. Une recherche ou un calcul ?"]);
+  if(/^(salut|bonjour|bonsoir|hello|coucou|hey|yo)\b/.test(n))return tag("Dialogue")+pick(["Bonjour ! Que puis-je chercher pour vous ?","Salut ! Posez-moi une question, un calcul ou un mot à définir."]);
+  if(/(qui es tu|tu es qui|comment tu t appelles|ton nom|que sais tu faire)/.test(n))return tag("Identité")+"Je suis <b>CORTEX</b> : un assistant local avec un lexique de "+LEX.length+" mots, une mémoire que vous pouvez enrichir, et une recherche web intégrée (Wikipédia, Wiktionnaire).";
+  if(/(quelle heure|heure est il)/.test(n))return tag("Horloge")+new Date().toLocaleTimeString("fr-FR");
+  if(/(quel jour|quelle date|date d aujourd)/.test(n))return tag("Horloge")+new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  if(/^(oublie tout|efface ta memoire)/.test(n)){facts={};forget();save();side();return tag("Mémoire")+"Mémoire apprise effacée."}
+  let m=q.match(/^(?:retiens|apprends)(?:\s+que)?[\s:]+(.+?)\s*(?:=|:)\s*(.+)$/i);
+  if(m){facts[m[1].trim()]=m[2].trim();learn(m[1],m[2],"user");save();side();return tag("Apprentissage")+`C'est noté : <b>${esc(m[1].trim())}</b> = ${esc(m[2].trim())}`}
+  const calc=q.toLowerCase().replace(/^(calcule|combien font|combien fait)\s*/,"").replace(/,/g,".").replace(/[x×]/g,"*").replace(/÷/g,"/").replace(/\^/g,"**").replace(/=\s*\??$/,"");
+  if(/^[\d\s+\-*/().%]+$/.test(calc)&&/\d/.test(calc)&&/[+\-*/%]/.test(calc)){
+    try{const r=Function('"use strict";return('+calc+')')();if(isFinite(r))return tag("Calcul")+`<h3>${esc(+r.toFixed(10))}</h3>`}catch(e){}}
+  m=n.match(/mots? (?:commencant|debutant) par ([a-z]+)/);
+  if(m){const r=LEX.filter(w=>w.startsWith(m[1]));return tag("Lexique")+(r.length?r.slice(0,40).join(", ")+(r.length>40?"…":""):"Aucun mot trouvé dans mon lexique.")}
+  m=n.match(/mots? (?:finissant|se terminant|terminant) par ([a-z]+)/);
+  if(m){const r=LEX.filter(w=>w.endsWith(m[1]));return tag("Lexique")+(r.length?r.slice(0,40).join(", "):"Aucun mot trouvé dans mon lexique.")}
+  if(/mot (aleatoire|au hasard)/.test(n))return tag("Lexique")+`<h3>${pick(LEX)}</h3>`;
+  m=n.match(/capitale (?:de |du |des |d )?(?:l |la |le |les )?([a-z ]+)$/);
+  if(m&&CAP[m[1].trim()])return tag("Géographie")+`La capitale est <b>${esc(CAP[m[1].trim()])}</b>.`;
+  const toks=n.split(" ").filter(t=>t&&!STOP.has(t));
+  for(const [k,v] of Object.entries(facts)){const kt=norm(k).split(" ").filter(t=>!STOP.has(t));
+    if(kt.length&&kt.every(t=>toks.includes(t)))return tag("Mémoire")+`<h3>${esc(k)}</h3>${esc(v)}`}
+  m=n.match(/^(?:definition|definis|signification|sens|que veut dire|c est quoi|qu est ce que|qu est ce qu)\s+(?:de |du |d |un |une |le |la |l )*([a-z-]+)$/);
+  const b=match(q);
+  if(b&&b.s>=0.58)return tag("Cerveau local · "+pct(b))+ans(b)+`<div class="src">Phrase reconnue : « ${esc(b.x.p)} »</div>`;
+  const sv=matchSav(q);
+  if(sv)return tag("Savoir · "+SAV.length+" articles")+`<h3>${esc(sv.e.t)}</h3>${esc(sv.e.a)}<div class="src"><a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(sv.e.t.replace(/ /g,"_"))}" target="_blank" rel="noopener">Wikipédia ↗</a></div>`;
+  try{
+    if(HOSTED&&!SRV)throw 0;
+    if(!SRV&&Date.now()<netOff)throw 0;
+    if(m){const w=q.toLowerCase().split(/[\s'’?!.]+/).filter(Boolean).pop();const p=await wikt(w);if(p)learn(q,p.extract.slice(0,500),"web");
+      if(p)return tag("Dictionnaire")+`<h3>${esc(p.title)}</h3>${esc(p.extract.slice(0,700)).replace(/\n/g,"<br>")}<div class="src"><a href="https://fr.wiktionary.org/wiki/${encodeURIComponent(w)}" target="_blank" rel="noopener">Wiktionnaire ↗</a></div>`;
+      const s=near(w);if(s)return tag("Dictionnaire")+`Je ne trouve pas « ${esc(w)} ». Vouliez-vous dire <b>${esc(s)}</b> ?`}
+    let qq=toks.join(" ")||q;
+    let ctx=false;if(last&&/\b(il|elle|son|sa|ses|lui)\b/.test(n)){qq=last+" "+qq;ctx=true}
+    let res=await wiki(qq),note="";
+    if(!res.length){const s=toks.map(w=>near(w)||w).join(" ");if(s&&s!=qq){res=await wiki(s);if(res.length)note=`<i style="color:var(--m)">Recherche corrigée : ${esc(s)}</i><br>`}}
+    if(!res.length){pending=q;return tag("Apprentissage")+"Je ne connais pas encore la réponse à « "+esc(q)+" ». Écrivez-la dans votre prochain message et je l'apprendrai (ou « annule »)."};
+    const t=res[0];last=t.title;
+    const extr=(t.extract||"").trim();
+    if(!ctx){
+      learn(q,t.title+" : "+extr.slice(0,500),"web");
+      learn(t.title,extr.slice(0,500),"web");
+      trackInterest(q);
+      addArticle(t.title, extr, 1);
+      // Approfondissement IMMÉDIAT autour de ta question (rapide et utile)
+      deepen(t.title).then(n=>{ side(); if(n>0){persistAll();} etat(); });
+      const words=norm(q).split(" ").filter(w=>w.length>3&&!STOP.has(w)).slice(0,3).join(" ");
+      if(words) deepen(words).then(n=>{ side(); if(n>0){persistAll();} etat(); });
+      persistAll();
+    }
+    return tag("Recherche web")+note+`<h3>${esc(t.title)}</h3>${esc((t.extract||"").trim()).replace(/\n/g,"<br>")}`+
+      `<div class="src"><a href="${link(t.fullurl)}" target="_blank" rel="noopener">Wikipédia : ${esc(t.title)} ↗</a>`+
+      res.slice(1).map(r=>`<a href="${link(r.fullurl)}" target="_blank" rel="noopener">${esc(r.title)} ↗</a>`).join("")+
+      `<a href="https://duckduckgo.com/?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">Chercher sur tout le web ↗</a></div>`;
+  }catch(e){if(e!==0)netOff=Date.now()+90000;
+    if(HOSTED&&SAMPLE&&CLUSE&&Date.now()>CLPAUSE){
+      try{
+        CLCALLS++;const r=await SAMPLE("Réponds en français, de façon factuelle et concise (3 phrases maximum, sans mise en forme), à la question suivante : « "+q+" ». Si tu n’es pas sûr de la réponse, dis-le clairement au lieu d’inventer.",{modelTier:"quick"});
+        const tx=(r.text||"").trim();
+        if(tx){learn(q,tx.slice(0,500),"claude");trackInterest(q);persistAll();return tag("Claude · appris et sauvegardé")+esc(tx).replace(/\n/g,"<br>")}
+      }catch(er){const c=er&&er.code;
+        if(c==="not_granted"||c==="sampling_disabled")return tag("Apprentissage")+"Claude n’est pas autorisé ici : accepte la demande d’autorisation pour que j’apprenne les réponses que je ne connais pas.";
+        if(c==="rate_limited"){CLPAUSE=Date.now()+300000;return tag("Limite de Claude")+"Tu as atteint la limite d’utilisation de Claude : je réponds avec ma propre mémoire pendant 5 minutes. Pour ne plus dépendre de Claude, désactive-le dans le menu."}}
+    }
+    const s2=matchSavText(q);if(s2)return tag("Savoir appris · "+Math.round(s2.s*100)+" %")+`<h3>${esc(s2.e.t)}</h3>${esc(s2.e.a)}`;
+    if(b&&b.s>=0.35)return tag("Estimation · "+pct(b))+ans(b)+`<div class="src">Phrase la plus proche : « ${esc(b.x.p)} » (${pct(b)} de correspondance)</div>`;
+    pending=q;return tag("Apprentissage")+"Je ne connais pas encore la réponse à « "+esc(q)+" ». Écrivez-la dans votre prochain message et je l'apprendrai (ou « annule »)."}
+}
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;let rec=null,voice=false,listening=false,busy=false;
+function say(txt){if(!voice||!window.speechSynthesis||!txt)return Promise.resolve();
+  return new Promise(r=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang="fr-FR";u.onend=u.onerror=()=>r();speechSynthesis.speak(u)})}
+function listen(){if(!SR||listening||!voice)return;rec=new SR();rec.lang="fr-FR";rec.interimResults=false;listening=true;
+  rec.onresult=e=>{const v=e.results[0][0].transcript;if(v)ask(v)};
+  rec.onerror=e=>{listening=false;if(e.error=="not-allowed"||e.error=="service-not-allowed"){voice=false;$("#mic").classList.remove("on");$("#mic").textContent="Voix";add("c","Le micro est refusé : autorisez-le dans les réglages du navigateur.")}};
+  rec.onend=()=>{listening=false;if(voice&&!busy)setTimeout(listen,400)};
+  try{rec.start()}catch(e){listening=false}}
+async function ask(q){q=q.trim();if(!q)return;busy=true;add("u",esc(q));
+  const t=add("c",'<div class="typing"><span></span><span></span><span></span></div>');
+  // Toujours attendre au moins 5 secondes pour chercher + comprendre
+  const [h] = await Promise.all([
+    think(q),
+    new Promise(r => setTimeout(r, 5000))
+  ]);
+  const bd=t.querySelector(".bd");bd.innerHTML=h;$("#chat").scrollTop=1e9;
+  if(voice){const c=bd.cloneNode(true);c.querySelectorAll(".tag,.src").forEach(x=>x.remove());await say(c.textContent.trim().slice(0,400))}
+  busy=false;if(voice)listen()}
+$("#f").onsubmit=e=>{e.preventDefault();const v=$("#q").value;$("#q").value="";ask(v)};
+["Capitale de l'Australie","Définition de sérendipité","12*(3+4)","Mots commençant par pro","Retiens : mon projet = CORTEX"].forEach(c=>{
+  const b=document.createElement("button");b.textContent=c;b.type="button";b.onclick=()=>ask(c);$("#chips").appendChild(b)});
+$("#reset").onclick=()=>{
+  if(!confirm("Effacer toute la mémoire apprise (phrases + articles) ?"))return;
+  vault.wipe().then(()=>{side();etat()});
+  add("c","Mémoire complètement effacée.");
+};
+$("#btnJournal").onclick=()=>{
+  const list=$("#journalList");
+  if(!SAV.length){list.innerHTML="<p style=\"color:#888\">Aucun article appris pour l’instant. Laisse la page ouverte quelques minutes.</p>";}
+  else{
+    list.innerHTML=SAV.slice().reverse().slice(0,120).map(e=>
+      `<div><b>${esc(e.t)}</b><span>${esc(e.a.slice(0,160))}${e.a.length>160?"…":""}</span></div>`
+    ).join("");
+  }
+  $("#journal").style.display="flex";
+  $("#side").classList.remove("open");
+};
+$("#closeJournal").onclick=()=>{$("#journal").style.display="none"};
+$("#btnSave").onclick=async()=>{
+  await vault.flushNow(true);await vault.tick();try{await brainPush()}catch(e){}try{DBMETA=true;await dbFlush()}catch(e){}
+  add("c",tag("Sauvegarde")+"Mémoire enregistrée ("+SAV.length+" articles, "+LRN.length+" phrases, "+INTERESTS.length+" sujets) · base interne : "+(vault.idbOk&&!vault.idbErr?"✓":"✗")+" · copie rapide : "+(vault.lsOk?"✓":"✗")+(SRV?" · disque : "+(LASTPUSH?"✓":"…"):"")+(HOSTED?" · site : "+(DBLAST&&!DBERR?"✓":"…"):"")+".");
+  $("#side").classList.remove("open");
+};
+function showText(txt){const l=$("#journalList");
+  l.innerHTML='<p style="color:#999;margin-bottom:10px">Le partage de fichier n’est pas disponible ici. Copie ce texte, colle-le dans Notes ou Fichiers, puis utilise « Importer un cerveau ».</p><textarea id="expTxt" readonly style="width:100%;height:50vh;background:#0a0a0a;color:#fff;border:1px solid #333;border-radius:8px;padding:10px;font:11px ui-monospace,monospace"></textarea><button class="ghost" id="cpTxt" style="margin-top:10px">Copier</button>';
+  $("#expTxt").value=txt;
+  $("#cpTxt").onclick=async()=>{try{await navigator.clipboard.writeText(txt)}catch(e){$("#expTxt").select();document.execCommand("copy")}};
+  $("#journal").style.display="flex"}
+function afterExport(x,what){
+  if(x.r==="abort")return;
+  if(x.r==="fail"){showText(x.txt);return}
+  add("c",tag("Sauvegarde")+what+" exporté ("+SAV.length+" articles, "+LRN.length+" phrases). Garde-le dans Fichiers : tu pourras le réimporter à tout moment.");
+  $("#side").classList.remove("open");vaultUI()}
+$("#btnExport").onclick=async()=>{afterExport(await vault.exportJson(),"Cerveau")};
+$("#btnExportHtml").onclick=async()=>{afterExport(await vault.exportHtml(),"Fichier CORTEX avec cerveau intégré")};
+$("#btnImport").onclick=()=>$("#fileImp").click();
+$("#fileImp").onchange=async e=>{
+  const f=e.target.files[0];e.target.value="";if(!f)return;
+  let r=null;try{r=vault.importText(await f.text())}catch(er){}
+  if(!r){add("c",tag("Sauvegarde")+"Fichier non reconnu : choisis un .json exporté par CORTEX (ou un .html avec cerveau intégré).");return}
+  side();etat();$("#side").classList.remove("open");
+  add("c",tag("Sauvegarde")+"Cerveau importé : +"+r.ns+" articles, +"+r.nl+" phrases. Total : "+SAV.length+" articles, "+LRN.length+" phrases.")};
+$("#mic").onclick=()=>{if(!SR){add("c","La reconnaissance vocale n'est pas disponible ici. Ouvrez la page dans Safari.");return}
+  voice=!voice;$("#mic").classList.toggle("on",voice);$("#mic").textContent=voice?"Voix : on":"Voix";
+  if(voice){try{speechSynthesis.speak(new SpeechSynthesisUtterance(""))}catch(e){}listen()}else{try{rec&&rec.abort()}catch(e){}try{speechSynthesis.cancel()}catch(e){}}};
+$("#menu").onclick=()=>$("#side").classList.toggle("open");
+$("#chat").onclick=()=>$("#side").classList.remove("open");
+etat();setInterval(etat,3000);side();add("c","Bonjour, je suis <b>CORTEX</b>. J’apprends <b>automatiquement de tout</b>, en priorisant ce que tu me demandes et les sujets que les gens posent souvent. Plusieurs recherches en parallèle, en continu et en silence (jamais dans le chat) : sujets que tu demandes d’abord, puis liens des articles appris, puis culture générale. Je m’enrichis aussi en mots. Sauvegarde automatique continue (base interne + copie rapide), avec export en fichier de secours. Menu ☰ → « Voir les articles appris ». <i>Astuce : ajoute à l’écran d’accueil pour garder la mémoire.</i>");
+</script></body></html>
